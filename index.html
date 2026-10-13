@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Edson Brenno — Engenheiro Back-End | Java, Python & Arquitetura de Sistemas</title>
+  <meta name="description" content="Portfólio de Edson Brenno, desenvolvedor Back-End com 5 anos de experiência em Java, Python, microsserviços, ETL e arquitetura de sistemas escaláveis. Baseado na Bahia, Brasil." />
+  <meta name="author" content="Edson Brenno Ribeiro de Santana" />
+  <meta name="theme-color" content="#0a0b10" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Edson Brenno — Engenheiro Back-End" />
+  <meta property="og:description" content="Eu construo o que ninguém vê — e faz tudo funcionar. Microsserviços, pipelines de dados e arquitetura limpa." />
+  <meta property="og:image" content="assets/img/hero.webp" />
+  <meta property="og:locale" content="pt_BR" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Inter:wght@300..700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <link rel="preload" as="image" href="assets/img/hero.webp" />
+  <link rel="stylesheet" href="css/style.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Edson Brenno Ribeiro de Santana",
+    "jobTitle": "Desenvolvedor de Software Pleno — Back-End",
+    "worksFor": { "@type": "Organization", "name": "Zrn Tecnologias" },
+    "address": { "@type": "PostalAddress", "addressRegion": "BA", "addressCountry": "BR" },
+    "email": "mailto:brennorebeiro@gmail.com",
+    "sameAs": ["https://www.linkedin.com/in/edson-brenno", "https://github.com/Edson-brenno"],
+    "knowsAbout": ["Java", "Spring Boot", "Python", "FastAPI", "Django", "PostgreSQL", "Microsserviços", "ETL", "RabbitMQ", "Docker", "CI/CD"]
+  }
+  </script>
+</head>
+<body class="is-loading">
+  <a class="skip-link" href="#main">Pular para o conteúdo</a>
+
+  <!-- ===== Preloader ===== -->
+  <div class="loader" id="loader" aria-hidden="true">
+    <div class="loader__inner">
+      <p class="loader__line mono"><span class="loader__prompt">$</span> ./contar-historia --autor="edson"</p>
+      <div class="loader__count"><span id="loaderCount">0</span><small>%</small></div>
+      <div class="loader__bar"><span id="loaderBar"></span></div>
+    </div>
+  </div>
+
+  <!-- ===== Ambient layers ===== -->
+  <div class="grain" aria-hidden="true"></div>
+  <div class="cursor" id="cursor" aria-hidden="true"><span class="cursor__label" id="cursorLabel"></span></div>
+  <div class="progress" aria-hidden="true"><span id="progressBar"></span></div>
+
+  <!-- ===== Header ===== -->
+  <header class="nav" id="nav">
+    <a href="#top" class="nav__logo" id="navLogo" aria-label="Edson Brenno — início">
+      <span class="nav__logo-mark">EB</span><span class="nav__logo-dot">.</span>
+    </a>
+    <nav aria-label="Navegação principal">
+      <ul class="nav__links" id="navLinks">
+        <li><a href="#trajetoria" data-nav>Trajetória</a></li>
+        <li><a href="#impacto" data-nav>Impacto</a></li>
+        <li><a href="#arquitetura" data-nav>Arquitetura</a></li>
+        <li><a href="#stack" data-nav>Stack</a></li>
+        <li><a href="#vida" data-nav>Além do código</a></li>
+      </ul>
+    </nav>
+    <a href="#contato" class="btn btn--small btn--ghost nav__cta magnetic" id="navCta">Vamos conversar</a>
+    <button class="nav__burger" id="navBurger" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobileMenu">
+      <span></span><span></span>
+    </button>
+  </header>
+
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <ul>
+      <li><a href="#trajetoria">Trajetória</a></li>
+      <li><a href="#impacto">Impacto</a></li>
+      <li><a href="#arquitetura">Arquitetura</a></li>
+      <li><a href="#stack">Stack</a></li>
+      <li><a href="#vida">Além do código</a></li>
+      <li><a href="#contato">Contato</a></li>
+    </ul>
+  </div>
+
+  <main id="main">
+
+    <!-- ===== HERO ===== -->
+    <section class="hero" id="top" aria-labelledby="heroTitle">
+      <div class="hero__glow" aria-hidden="true"></div>
+      <div class="container hero__grid">
+        <div class="hero__content">
+          <p class="eyebrow hero__eyebrow" data-hero>
+            <span class="status-dot" aria-hidden="true"></span>
+            Engenheiro Back-End · Bahia, Brasil
+          </p>
+          <h1 class="hero__title" id="heroTitle">
+            <span class="line"><span data-hero-line>Eu construo</span></span>
+            <span class="line"><span data-hero-line>o que ninguém <em>vê</em></span></span>
+            <span class="line"><span data-hero-line>— e faz tudo</span></span>
+            <span class="line"><span data-hero-line class="accent-text">funcionar.</span></span>
+          </h1>
+          <p class="hero__lead" data-hero>
+            Oi, eu sou o <strong>Edson Brenno</strong>. Há 5 anos arquiteto APIs, microsserviços e pipelines de dados
+            em <strong>Java</strong> e <strong>Python</strong> — transformando processos de meses em minutos.
+          </p>
+          <div class="hero__actions" data-hero>
+            <a href="#manifesto" class="btn btn--primary magnetic" id="heroCtaStory">
+              Conheça minha história
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+            </a>
+            <a href="assets/cv-edson-brenno.pdf" class="btn btn--ghost magnetic" id="heroCtaCv" download>
+              Baixar CV
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0-4-4m4 4 4-4M5 21h14"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="hero__visual" data-hero-visual>
+          <div class="hero__frame">
+            <img src="assets/img/hero.webp" alt="Retrato de Edson Brenno sorrindo, de camiseta preta" width="1000" height="1778" fetchpriority="high" />
+            <div class="hero__frame-shine" aria-hidden="true"></div>
+          </div>
+          <div class="float-chip float-chip--1" data-float><span class="mono">@SpringBootApplication</span></div>
+          <div class="float-chip float-chip--2" data-float><span class="mono">async def</span> FastAPI</div>
+          <div class="float-chip float-chip--3" data-float>
+            <span class="chip-dot"></span> 9 microsserviços em produção
+          </div>
+          <div class="hero__code mono" aria-hidden="true" data-float>
+            <span class="c-key">SELECT</span> paixão<br/>
+            <span class="c-key">FROM</span> engenharia<br/>
+            <span class="c-key">WHERE</span> impacto &gt; <span class="c-num">0</span>;
+          </div>
+        </div>
+      </div>
+
+      <a href="#manifesto" class="scroll-cue" aria-label="Rolar para baixo">
+        <span class="scroll-cue__text mono">role</span>
+        <span class="scroll-cue__line"></span>
+      </a>
+    </section>
+
+    <!-- ===== MARQUEE ===== -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span>Java</span><i>✦</i><span>Spring Boot</span><i>✦</i><span>Python</span><i>✦</i><span>FastAPI</span><i>✦</i><span>Django</span><i>✦</i><span>PostgreSQL</span><i>✦</i><span>RabbitMQ</span><i>✦</i><span>Kong</span><i>✦</i><span>Celery</span><i>✦</i><span>Redis</span><i>✦</i><span>Docker</span><i>✦</i><span>CI/CD</span><i>✦</i>
+        <span>Java</span><i>✦</i><span>Spring Boot</span><i>✦</i><span>Python</span><i>✦</i><span>FastAPI</span><i>✦</i><span>Django</span><i>✦</i><span>PostgreSQL</span><i>✦</i><span>RabbitMQ</span><i>✦</i><span>Kong</span><i>✦</i><span>Celery</span><i>✦</i><span>Redis</span><i>✦</i><span>Docker</span><i>✦</i><span>CI/CD</span><i>✦</i>
+      </div>
+    </div>
+
+    <!-- ===== MANIFESTO ===== -->
+    <section class="manifesto" id="manifesto" aria-label="Manifesto">
+      <div class="container">
+        <p class="eyebrow">Prólogo</p>
+        <p class="manifesto__text" id="manifestoText">
+          Eu acredito que bom software é aquele que some. Ninguém percebe a fila que processa milhões de registros
+          de madrugada, o gateway que protege cada requisição, o pipeline que entrega dados de saúde em um dia
+          em vez de quatro meses. Mas é exatamente aí que as pessoas sentem a diferença. É isso que eu construo.
+        </p>
+      </div>
+    </section>
+
+    <!-- ===== IMPACTO ===== -->
+    <section class="impact section" id="impacto" aria-labelledby="impactTitle">
+      <div class="container">
+        <header class="section__head">
+          <p class="eyebrow">Capítulo 01 — Impacto</p>
+          <h2 class="section__title" id="impactTitle">Números que contam <em>histórias</em>.</h2>
+          <p class="section__lead">Cada métrica abaixo é uma equipe que voltou a ter tempo, um gestor que decidiu mais rápido, um cidadão melhor atendido.</p>
+        </header>
+
+        <div class="impact__grid">
+          <article class="impact-card impact-card--xl tilt" data-reveal>
+            <div class="impact-card__before mono">antes: <s>4 meses</s></div>
+            <div class="impact-card__value"><span data-count="1">0</span><small> dia</small></div>
+            <p class="impact-card__label">para equipes de saúde acessarem os dados que precisam, com pipelines ETL automatizados.</p>
+            <span class="impact-card__tag">Prefeitura de Mata de São João</span>
+          </article>
+
+          <article class="impact-card tilt" data-reveal>
+            <div class="impact-card__before mono">antes: <s>30+ dias</s></div>
+            <div class="impact-card__value">&lt;<span data-count="1">0</span><small> dia</small></div>
+            <p class="impact-card__label">para elaborar planos municipais, com as APIs centrais da plataforma de planejamento estratégico.</p>
+            <span class="impact-card__tag">Zrn Tecnologias</span>
+          </article>
+
+          <article class="impact-card tilt" data-reveal>
+            <div class="impact-card__before mono">antes: <s>4 dias</s></div>
+            <div class="impact-card__value"><span data-count="3">0</span><small> horas</small></div>
+            <p class="impact-card__label">no ciclo de coleta de dados, com web scraping e ETL ponta a ponta.</p>
+            <span class="impact-card__tag">TemMais Gestão</span>
+          </article>
+
+          <article class="impact-card tilt" data-reveal>
+            <div class="impact-card__value"><span data-count="83">0</span><small>%</small></div>
+            <p class="impact-card__label">mais rápido na ingestão no PostgreSQL — de 30 para 5 minutos com bulk load em memória.</p>
+            <span class="impact-card__tag">Performance</span>
+          </article>
+
+          <article class="impact-card tilt" data-reveal>
+            <div class="impact-card__value"><span data-count="9">0</span></div>
+            <p class="impact-card__label">microsserviços autônomos arquitetados do zero, cada um com seu próprio banco.</p>
+            <span class="impact-card__tag">Arquitetura</span>
+          </article>
+
+          <article class="impact-card tilt" data-reveal>
+            <div class="impact-card__value">−<span data-count="30">0</span><small>%</small></div>
+            <p class="impact-card__label">no tempo de manutenção e depuração de erros críticos, com arquitetura em camadas.</p>
+            <span class="impact-card__tag">Qualidade</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== TRAJETÓRIA ===== -->
+    <section class="journey section" id="trajetoria" aria-labelledby="journeyTitle">
+      <div class="container">
+        <header class="section__head">
+          <p class="eyebrow">Capítulo 02 — Trajetória</p>
+          <h2 class="section__title" id="journeyTitle">Uma jornada de <em>problemas reais</em>.</h2>
+          <p class="section__lead">Eu não comecei escrevendo código bonito. Comecei resolvendo dores de verdade — e a arquitetura veio como consequência.</p>
+        </header>
+
+        <div class="timeline" id="timeline">
+          <div class="timeline__rail" aria-hidden="true"><span id="timelineProgress"></span></div>
+
+          <!-- Chapter: Prefeitura -->
+          <article class="chapter" data-chapter>
+            <div class="chapter__meta">
+              <span class="chapter__num mono">2021</span>
+              <span class="chapter__dot" aria-hidden="true"></span>
+            </div>
+            <div class="chapter__card">
+              <p class="chapter__kicker mono">09/2021 — 07/2024 · Mata de São João, BA</p>
+              <h3 class="chapter__title">O primeiro problema real</h3>
+              <p class="chapter__role">Analista de Sistemas · <strong>Prefeitura de Mata de São João</strong></p>
+              <p class="chapter__story">
+                Equipes de saúde esperavam <strong>quatro meses</strong> para ter acesso a dados que deveriam guiar
+                decisões diárias. Ali eu entendi que tecnologia é sobre pessoas. Construí pipelines ETL que
+                reduziram essa espera para <strong>um dia</strong>.
+              </p>
+              <ul class="chapter__list">
+                <li>Pipelines ETL automatizados com Python (Pandas, SQLAlchemy) e PostgreSQL.</li>
+                <li>Entrega de pipelines de 3 dias para 1 dia, com POO e arquitetura de código reutilizável.</li>
+                <li>Ingestão 83% mais rápida (30 → 5 min) com bulk load via <code>io.StringIO</code>, eliminando gargalos de I/O.</li>
+              </ul>
+              <ul class="tags" aria-label="Tecnologias">
+                <li>Python</li><li>Pandas</li><li>SQLAlchemy</li><li>PostgreSQL</li><li>ETL</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- Chapter: TemMais -->
+          <article class="chapter" data-chapter>
+            <div class="chapter__meta">
+              <span class="chapter__num mono">2021</span>
+              <span class="chapter__dot" aria-hidden="true"></span>
+            </div>
+            <div class="chapter__card">
+              <p class="chapter__kicker mono">12/2021 — 07/2024 · Mata de São João, BA</p>
+              <h3 class="chapter__title">Automatizar o que é repetitivo</h3>
+              <p class="chapter__role">Desenvolvedor Python · <strong>TemMais Gestão</strong></p>
+              <p class="chapter__story">
+                Paralelo à prefeitura, mergulhei no desenvolvimento de produtos. Coletar dados levava
+                <strong>quatro dias</strong> de trabalho manual — eu automatizei para <strong>três horas</strong>.
+              </p>
+              <ul class="chapter__list">
+                <li>Web scraping automatizado com fluxo ETL completo, da extração ao PostgreSQL.</li>
+                <li>Sistemas escaláveis com arquitetura MVT do Django e separação clara de responsabilidades.</li>
+              </ul>
+              <ul class="tags" aria-label="Tecnologias">
+                <li>Python</li><li>Django</li><li>Web Scraping</li><li>PostgreSQL</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- Chapter: Zrn -->
+          <article class="chapter chapter--current" data-chapter>
+            <div class="chapter__meta">
+              <span class="chapter__num mono">2024</span>
+              <span class="chapter__dot" aria-hidden="true"></span>
+            </div>
+            <div class="chapter__card">
+              <span class="chapter__badge"><span class="status-dot" aria-hidden="true"></span> Agora</span>
+              <p class="chapter__kicker mono">07/2024 — atual · Dias d'Ávila, BA</p>
+              <h3 class="chapter__title">Arquitetar do zero</h3>
+              <p class="chapter__role">Desenvolvedor de Software Pleno · <strong>Zrn Tecnologias</strong></p>
+              <p class="chapter__story">
+                Hoje sou responsável pela <strong>arquitetura e engenharia completa do ecossistema back-end</strong> —
+                do planejamento e modelagem à segurança de bancos, orquestração em nuvem e observabilidade.
+                Meu foco: uma <strong>Clean Architecture</strong> que permita à empresa crescer sem medo.
+              </p>
+              <ul class="chapter__list">
+                <li>Plataforma com <strong>9 microsserviços</strong> em Java/Spring Boot, cada um com banco e ciclo próprios.</li>
+                <li><strong>API Gateway com Kong</strong> e serviço central de autenticação em Python: ponto de entrada único e seguro.</li>
+                <li>APIs centrais da plataforma de planejamento estratégico: planos municipais de <strong>30+ dias para &lt;1 dia</strong>.</li>
+                <li>API REST em <strong>FastAPI</strong> desacoplada do monolito — base da migração para microsserviços.</li>
+                <li><strong>RabbitMQ</strong> para filas e processamento em background, liberando a aplicação principal.</li>
+                <li>Pipeline ETL do <strong>e-SUS</strong> orientado a eventos com Celery, em VPS Linux provisionadas por mim.</li>
+                <li>CI/CD, Docker e observabilidade em tempo real para detectar falhas antes do usuário.</li>
+              </ul>
+              <ul class="tags" aria-label="Tecnologias">
+                <li>Java</li><li>Spring Boot</li><li>Kong</li><li>FastAPI</li><li>RabbitMQ</li><li>Celery</li><li>Docker</li><li>CI/CD</li><li>Linux</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- Next chapter -->
+          <article class="chapter chapter--next" data-chapter>
+            <div class="chapter__meta">
+              <span class="chapter__num mono">?</span>
+              <span class="chapter__dot" aria-hidden="true"></span>
+            </div>
+            <div class="chapter__card chapter__card--ghost">
+              <h3 class="chapter__title">O próximo capítulo</h3>
+              <p class="chapter__story">Talvez a gente escreva juntos. <a href="#contato" class="link">Vamos conversar →</a></p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== ARQUITETURA ===== -->
+    <section class="arch section" id="arquitetura" aria-labelledby="archTitle">
+      <div class="container">
+        <header class="section__head">
+          <p class="eyebrow">Capítulo 03 — Por dentro</p>
+          <h2 class="section__title" id="archTitle">Como eu penso <em>sistemas</em>.</h2>
+          <p class="section__lead">Uma visão simplificada do ecossistema que arquitetei na Zrn. Passe o mouse (ou toque) em cada peça para entender o papel dela.</p>
+        </header>
+
+        <div class="arch__wrap">
+          <div class="arch__diagram" id="archDiagram">
+            <svg class="arch__lines" id="archLines" aria-hidden="true"></svg>
+
+            <div class="arch__col">
+              <button class="node" data-node="client" id="node-client" type="button">
+                <span class="node__icon">◎</span><span class="node__name">Clientes</span><span class="node__sub mono">web · mobile · parceiros</span>
+              </button>
+              <button class="node node--source" data-node="esus" id="node-esus" type="button">
+                <span class="node__icon">⛁</span><span class="node__name">e-SUS</span><span class="node__sub mono">fonte de dados</span>
+              </button>
+            </div>
+
+            <div class="arch__col">
+              <button class="node node--accent" data-node="kong" id="node-kong" type="button">
+                <span class="node__icon">⬢</span><span class="node__name">Kong Gateway</span><span class="node__sub mono">entrada única</span>
+              </button>
+              <button class="node" data-node="auth" id="node-auth" type="button">
+                <span class="node__icon">🔐</span><span class="node__name">Auth Service</span><span class="node__sub mono">Python</span>
+              </button>
+              <button class="node" data-node="etl" id="node-etl" type="button">
+                <span class="node__icon">⇄</span><span class="node__name">ETL Pipeline</span><span class="node__sub mono">event-driven</span>
+              </button>
+            </div>
+
+            <div class="arch__col arch__col--services">
+              <div class="services" data-node="services" id="node-services" tabindex="0" role="button" aria-label="9 microsserviços Spring Boot">
+                <span class="services__title mono">9 microsserviços · Spring Boot</span>
+                <div class="services__grid">
+                  <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                </div>
+              </div>
+              <button class="node" data-node="fastapi" id="node-fastapi" type="button">
+                <span class="node__icon">⚡</span><span class="node__name">FastAPI</span><span class="node__sub mono">API desacoplada</span>
+              </button>
+            </div>
+
+            <div class="arch__col">
+              <button class="node" data-node="rabbit" id="node-rabbit" type="button">
+                <span class="node__icon">✉</span><span class="node__name">RabbitMQ</span><span class="node__sub mono">filas · async</span>
+              </button>
+              <button class="node" data-node="celery" id="node-celery" type="button">
+                <span class="node__icon">⚙</span><span class="node__name">Celery</span><span class="node__sub mono">workers</span>
+              </button>
+              <button class="node node--db" data-node="db" id="node-db" type="button">
+                <span class="node__icon">🗄</span><span class="node__name">PostgreSQL</span><span class="node__sub mono">db por serviço</span>
+              </button>
+            </div>
+          </div>
+
+          <aside class="arch__panel" id="archPanel" aria-live="polite">
+            <p class="arch__panel-kicker mono" id="archKicker">// selecione uma peça</p>
+            <h3 class="arch__panel-title" id="archPanelTitle">O ecossistema</h3>
+            <p class="arch__panel-text" id="archPanelText">
+              Um ecossistema distribuído, desenhado para ser resiliente, observável e fácil de evoluir.
+              Cada serviço é independente; a comunicação é segura e assíncrona sempre que possível.
+            </p>
+            <ul class="arch__panel-pills">
+              <li>Clean Architecture</li><li>Observabilidade</li><li>CI/CD</li><li>Docker</li>
+            </ul>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== STACK ===== -->
+    <section class="stack section" id="stack" aria-labelledby="stackTitle">
+      <div class="container">
+        <header class="section__head">
+          <p class="eyebrow">Capítulo 04 — Ferramentas</p>
+          <h2 class="section__title" id="stackTitle">A caixa de <em>ferramentas</em>.</h2>
+          <p class="section__lead">Tecnologia é meio, não fim. Mas escolher bem a ferramenta é metade do trabalho.</p>
+        </header>
+
+        <div class="stack__grid">
+          <article class="stack-card spotlight" data-reveal>
+            <span class="stack-card__num mono">01</span>
+            <h3>Linguagens</h3>
+            <ul class="tags tags--lg"><li>Java</li><li>Python</li><li>SQL</li><li>JavaScript</li></ul>
+          </article>
+          <article class="stack-card spotlight" data-reveal>
+            <span class="stack-card__num mono">02</span>
+            <h3>Frameworks & APIs</h3>
+            <ul class="tags tags--lg"><li>Spring Boot</li><li>FastAPI</li><li>Django</li><li>Flask</li><li>RESTful APIs</li></ul>
+          </article>
+          <article class="stack-card spotlight" data-reveal>
+            <span class="stack-card__num mono">03</span>
+            <h3>Dados</h3>
+            <ul class="tags tags--lg"><li>PostgreSQL</li><li>MongoDB</li><li>SQLite</li><li>ETL/ELT</li><li>Pandas</li><li>Modelagem</li></ul>
+          </article>
+          <article class="stack-card spotlight" data-reveal>
+            <span class="stack-card__num mono">04</span>
+            <h3>Mensageria & Async</h3>
+            <ul class="tags tags--lg"><li>RabbitMQ</li><li>Celery</li><li>Redis</li><li>Apache Kafka</li></ul>
+          </article>
+          <article class="stack-card spotlight" data-reveal>
+            <span class="stack-card__num mono">05</span>
+            <h3>Infra & DevOps</h3>
+            <ul class="tags tags--lg"><li>Docker</li><li>CI/CD</li><li>GitHub</li><li>Linux</li><li>Kong</li><li>Observabilidade</li></ul>
+          </article>
+          <article class="stack-card spotlight" data-reveal>
+            <span class="stack-card__num mono">06</span>
+            <h3>Práticas</h3>
+            <ul class="tags tags--lg"><li>Clean Architecture</li><li>Microsserviços</li><li>POO</li><li>Scrum</li><li>Kanban</li><li>LLMs</li></ul>
+          </article>
+        </div>
+
+        <div class="edu">
+          <h3 class="edu__title">Formação & certificações</h3>
+          <div class="edu__grid">
+            <article class="edu-card" data-reveal>
+              <span class="edu-card__status edu-card__status--live">Cursando</span>
+              <h4>Engenharia da Computação</h4>
+              <p>Bacharelado · Unijorge</p>
+            </article>
+            <article class="edu-card" data-reveal>
+              <span class="edu-card__status">2022 — 2023</span>
+              <h4>MBA em Segurança da Informação</h4>
+              <p>Especialização · Descomplica</p>
+            </article>
+            <article class="edu-card" data-reveal>
+              <span class="edu-card__status">2019 — 2021</span>
+              <h4>Análise e Desenvolvimento de Sistemas</h4>
+              <p>Tecnólogo · Unicesumar</p>
+            </article>
+            <article class="edu-card edu-card--aws" data-reveal>
+              <span class="edu-card__status edu-card__status--live">Em preparação</span>
+              <h4>AWS Certified Developer — Associate</h4>
+              <p>Preparação ativa</p>
+            </article>
+          </div>
+          <p class="edu__langs mono">Português — nativo &nbsp;·&nbsp; Inglês — intermediário/avançado (B2)</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== INTERLUDE ===== -->
+    <section class="interlude" id="interlude" aria-label="Transição para vida pessoal">
+      <div class="interlude__media" aria-hidden="true">
+        <img src="assets/img/lake.webp" alt="" loading="lazy" width="1200" height="1681" />
+      </div>
+      <div class="interlude__content container">
+        <p class="eyebrow eyebrow--light">Intervalo</p>
+        <h2 class="interlude__title">
+          <span class="line"><span data-interlude-line>Quando o terminal</span></span>
+          <span class="line"><span data-interlude-line>fecha, a história</span></span>
+          <span class="line"><span data-interlude-line><em>continua.</em></span></span>
+        </h2>
+      </div>
+      <p class="interlude__caption mono">Lua cheia na represa · Dias d'Ávila, BA</p>
+    </section>
+
+    <!-- ===== VIDA ===== -->
+    <section class="life" id="vida" aria-labelledby="lifeTitle">
+      <div class="life__intro container">
+        <p class="eyebrow">Capítulo 05 — Além do código</p>
+        <h2 class="section__title" id="lifeTitle">O que me <em>move</em>.</h2>
+        <p class="section__lead">Os mesmos valores que levo para o código — paciência, ritmo, curiosidade e conexão — vêm daqui.</p>
+      </div>
+
+      <div class="life__pin" id="lifePin">
+        <div class="life__track" id="lifeTrack">
+
+          <!-- Moto -->
+          <article class="life-card life-card--video" data-cursor="assistir">
+            <div class="life-card__media">
+              <video src="assets/video/ride.mp4" poster="assets/img/ride-poster.jpg" muted loop playsinline preload="none" data-autoplay aria-label="Vídeo pilotando moto em estrada ao pôr do sol"></video>
+            </div>
+            <div class="life-card__body">
+              <span class="life-card__num mono">01 / Estrada</span>
+              <h3>Viajar de moto</h3>
+              <p>Capacete, estrada e pôr do sol. Na moto eu aprendi que a melhor rota nem sempre é a mais curta — e que atenção ao presente é tudo.</p>
+            </div>
+          </article>
+
+          <!-- Música -->
+          <article class="life-card life-card--music">
+            <div class="life-card__media">
+              <img src="assets/img/music.webp" alt="Edson relaxado em sua cadeira, com um violão ao fundo" loading="lazy" width="900" height="1600" />
+              <div class="strings" id="strings" aria-label="Cordas interativas — passe o mouse" role="img">
+                <span data-note="0"></span><span data-note="1"></span><span data-note="2"></span><span data-note="3"></span>
+              </div>
+            </div>
+            <div class="life-card__body">
+              <span class="life-card__num mono">02 / Música</span>
+              <h3>Violoncelo, violão e baixo</h3>
+              <p>O violoncelo me ensinou paciência; o violão, leveza; o baixo, que a base sustenta tudo — igual a um bom back-end. <span class="hint">Passe o mouse nas cordas ♪</span></p>
+            </div>
+          </article>
+
+          <!-- Leitura -->
+          <article class="life-card life-card--books">
+            <div class="life-card__media">
+              <img src="assets/img/focus.webp" alt="Edson em seu quarto com uma estante de livros ao fundo" loading="lazy" width="900" height="1600" />
+              <div class="bookshelf" aria-hidden="true">
+                <span style="--h:86%;--c:#3a5bd9">1984</span>
+                <span style="--h:96%;--c:#e8a33d">Python</span>
+                <span style="--h:78%;--c:#c4553b">Cury</span>
+                <span style="--h:90%;--c:#2f8f6f">···</span>
+              </div>
+            </div>
+            <div class="life-card__body">
+              <span class="life-card__num mono">03 / Leitura</span>
+              <h3>Ler</h3>
+              <p>Na estante convivem Orwell, Augusto Cury e livros de programação. Ler me dá repertório para pensar diferente — dentro e fora do código.</p>
+            </div>
+          </article>
+
+          <!-- Corrida -->
+          <article class="life-card">
+            <div class="life-card__media">
+              <img src="assets/img/race.webp" alt="Edson correndo na prova H11 na Pista, com número 5093" loading="lazy" width="1600" height="1067" />
+            </div>
+            <div class="life-card__body">
+              <span class="life-card__num mono">04 / Movimento</span>
+              <h3>Desafios que dão medalha</h3>
+              <p>Peito 5093 na H11 na Pista. Assim como em projetos longos: ritmo constante, respirar fundo e cruzar a linha de chegada.</p>
+            </div>
+          </article>
+
+          <!-- Pessoas -->
+          <article class="life-card">
+            <div class="life-card__media">
+              <img src="assets/img/smile.webp" alt="Selfie de Edson sorrindo sob um teto de madeira" loading="lazy" width="900" height="1600" />
+            </div>
+            <div class="life-card__body">
+              <span class="life-card__num mono">05 / Pessoas</span>
+              <h3>Boas conversas</h3>
+              <p>Gosto de gente. De ouvir histórias, trocar ideias e rir sem pressa. É conversando que os melhores sistemas — e amizades — nascem.</p>
+            </div>
+          </article>
+
+          <!-- Tempo de qualidade -->
+          <article class="life-card life-card--video" data-cursor="respirar">
+            <div class="life-card__media">
+              <video src="assets/video/sea.mp4" poster="assets/img/sea-poster.jpg" muted loop playsinline preload="none" data-autoplay aria-label="Vídeo do mar em uma praia ensolarada"></video>
+            </div>
+            <div class="life-card__body">
+              <span class="life-card__num mono">06 / Pausa</span>
+              <h3>Tempo de qualidade</h3>
+              <p>Mar, céu azul e ninguém com pressa. Desligar é parte do processo — é aqui que as melhores ideias aparecem.</p>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CONTATO ===== -->
+    <section class="contact section" id="contato" aria-labelledby="contactTitle">
+      <div class="contact__glow" aria-hidden="true"></div>
+      <div class="container contact__inner">
+        <p class="eyebrow">Epílogo</p>
+        <h2 class="contact__title" id="contactTitle">
+          Vamos construir algo<br/>que <em>dure</em>?
+        </h2>
+        <p class="contact__lead">Estou aberto a novos desafios, projetos e — claro — a uma boa conversa.</p>
+
+        <div class="contact__actions">
+          <button class="contact__email magnetic" id="copyEmail" type="button" data-email="brennorebeiro@gmail.com" data-cursor="copiar">
+            <span class="contact__email-text">brennorebeiro@gmail.com</span>
+            <span class="contact__email-hint mono" id="copyHint">clique para copiar</span>
+          </button>
+        </div>
+
+        <ul class="socials">
+          <li><a href="https://www.linkedin.com/in/edson-brenno" target="_blank" rel="noopener" class="social magnetic" id="linkLinkedin">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9h4v12H3V9Zm7 0h3.8v1.7h.1c.5-1 1.8-2 3.8-2 4 0 4.8 2.7 4.8 6.1V21h-4v-5.5c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9V21h-4V9Z"/></svg>
+            LinkedIn</a></li>
+          <li><a href="https://github.com/Edson-brenno" target="_blank" rel="noopener" class="social magnetic" id="linkGithub">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.7 18.3 5 18.3 5c.7 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .5Z"/></svg>
+            GitHub</a></li>
+          <li><a href="assets/cv-edson-brenno.pdf" download class="social magnetic" id="linkCv">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6Zm0 2.5L17.5 8H14V4.5ZM8 13h8v1.5H8V13Zm0 3h8v1.5H8V16Zm0-6h4v1.5H8V10Z"/></svg>
+            Currículo</a></li>
+        </ul>
+      </div>
+
+      <footer class="footer container">
+        <p>© <span id="year">2026</span> Edson Brenno · Feito com café, código e um pouco de violoncelo.</p>
+        <a href="#top" class="footer__top link" id="backToTop">Voltar ao topo ↑</a>
+      </footer>
+    </section>
+  </main>
+
+  <!-- Libraries (deferred). The site works without them; they only add motion. -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js" defer></script>
+  <script src="js/main.js" defer></script>
+</body>
+</html>

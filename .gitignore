@@ -1,0 +1,11 @@
+# Raw sources — NOT for publishing.
+# cv/ contains personal documents (CPF, RG, address). Never commit it.
+cv/
+fotos/
+exemplos/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
