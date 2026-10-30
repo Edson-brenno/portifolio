@@ -407,6 +407,7 @@ em { font-style: italic; }
 .node--accent { border-color: rgba(255,179,92,.45); background: linear-gradient(180deg, rgba(255,179,92,.12), rgba(16,17,24,.9)); }
 .node--db .node__icon, .node--source .node__icon { color: var(--teal); }
 .arch__diagram.has-focus .node:not(.is-active):not(.is-linked), .arch__diagram.has-focus .services:not(.is-active):not(.is-linked) { opacity: .35; }
+.node.is-animating, .services.is-animating { transition: none !important; }
 .services {
   padding: 1rem; border-radius: 16px; border: 1px solid rgba(91,124,255,.4);
   background: linear-gradient(180deg, rgba(91,124,255,.12), rgba(16,17,24,.92)); cursor: pointer;
@@ -433,8 +434,8 @@ em { font-style: italic; }
 
 @media (max-width: 1080px) { .arch__wrap { grid-template-columns: 1fr; } }
 @media (max-width: 720px) {
-  .arch__diagram { grid-template-columns: 1fr 1fr; }
-  .arch__lines { display: none; }
+  .arch__diagram { grid-template-columns: 1fr 1fr; gap: 1.35rem 1.75rem; padding: 1.25rem; }
+
 }
 
 /* =========================================================

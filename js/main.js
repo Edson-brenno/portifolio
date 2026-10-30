@@ -124,8 +124,12 @@
   sections.forEach((s) => io.observe(s));
 
   /* ---------- i18n (PT / EN) ---------- */
-  let currentLang = localStorage.getItem("eb_lang") || (navigator.language && navigator.language.toLowerCase().startsWith("en") ? "en" : "pt");
-  if (currentLang !== "pt" && currentLang !== "en") currentLang = "pt";
+  let currentLang = "pt";
+  try {
+    localStorage.removeItem("eb_lang");
+    const urlLang = new URLSearchParams(window.location.search).get("lang");
+    if (urlLang === "en" || urlLang === "pt") currentLang = urlLang;
+  } catch (e) {}
 
   const i18n = {
     pt: {
@@ -571,7 +575,7 @@
     });
     ScrollTrigger.batch("[data-reveal]", {
       start: "top 88%",
-      onEnter: (batch) => gsap.fromTo(batch, { y: 60, opacity: 0 }, { y: 0, opacity: 1, duration: 1.1, ease: "expo.out", stagger: 0.1, overwrite: true }),
+      onEnter: (batch) => gsap.fromTo(batch, { y: 60, opacity: 0 }, { y: 0, opacity: 1, duration: 1.1, ease: "expo.out", stagger: 0.1, overwrite: true, clearProps: "transform,opacity,translate,rotate,scale" }),
     });
     gsap.set("[data-reveal]", { opacity: 0 });
 
@@ -621,14 +625,31 @@
       if (getComputedStyle(svg).display === "none") return;
       const d = diagram.getBoundingClientRect();
       links.forEach(([a, b], i) => {
-        const A = nodeEl(a).getBoundingClientRect();
-        const B = nodeEl(b).getBoundingClientRect();
+        const elA = nodeEl(a), elB = nodeEl(b);
+        if (!elA || !elB) return;
+        const rA = elA.getBoundingClientRect(), rB = elB.getBoundingClientRect();
+        const yOffA = hasGSAP ? (+gsap.getProperty(elA, "y") || 0) : 0;
+        const yOffB = hasGSAP ? (+gsap.getProperty(elB, "y") || 0) : 0;
+        const A = { left: rA.left, right: rA.right, top: rA.top - yOffA, bottom: rA.bottom - yOffA, width: rA.width, height: rA.height };
+        const B = { left: rB.left, right: rB.right, top: rB.top - yOffB, bottom: rB.bottom - yOffB, width: rB.width, height: rB.height };
         let x1, y1, x2, y2, path;
         if (Math.abs(A.left - B.left) < 30) {
           x1 = A.left + A.width / 2 - d.left; y1 = A.bottom - d.top;
           x2 = B.left + B.width / 2 - d.left; y2 = B.top - d.top;
           if (y2 < y1) { [y1, y2] = [A.top - d.top, B.bottom - d.top]; }
           path = `M${x1},${y1} L${x2},${y2}`;
+          if (Math.abs(B.top - A.bottom) >= 48 && Math.abs(A.top - B.bottom) >= 48) {
+            const isRightCol = (A.left - d.left) > d.width * 0.35;
+            x1 = (isRightCol ? A.left : A.right) - d.left; y1 = A.top + A.height / 2 - d.top;
+            x2 = (isRightCol ? B.left : B.right) - d.left; y2 = B.top + B.height / 2 - d.top;
+            const cx = x1 + (isRightCol ? -16 : 16);
+            path = `M${x1},${y1} C${cx},${y1} ${cx},${y2} ${x2},${y2}`;
+          }
+        } else if (A.left > B.left) {
+          x1 = A.left - d.left; y1 = A.top + A.height / 2 - d.top;
+          x2 = B.right - d.left; y2 = B.top + B.height / 2 - d.top;
+          const mx = (x1 + x2) / 2;
+          path = `M${x1},${y1} C${mx},${y1} ${mx},${y2} ${x2},${y2}`;
         } else {
           x1 = A.right - d.left; y1 = A.top + A.height / 2 - d.top;
           x2 = B.left - d.left; y2 = B.top + B.height / 2 - d.top;
@@ -639,6 +660,7 @@
         p.setAttribute("d", path);
         p.setAttribute("id", `link-${i}`);
         p.dataset.a = a; p.dataset.b = b;
+        if (activeArchKey && diagram.classList.contains("has-focus") && (a === activeArchKey || b === activeArchKey)) p.classList.add("is-hot");
         svg.appendChild(p);
 
         if (!prefersReduced) {
@@ -694,7 +716,9 @@
     if (document.fonts && document.fonts.ready) document.fonts.ready.then(draw);
 
     if (motion) {
-      gsap.from(".arch__col > *", { y: 30, opacity: 0, duration: 0.9, ease: "expo.out", stagger: 0.06, scrollTrigger: { trigger: diagram, start: "top 75%" }, onComplete: draw });
+      const archItems = $$(".arch__col > *", diagram);
+      archItems.forEach((el) => el.classList.add("is-animating"));
+      gsap.fromTo(archItems, { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.9, ease: "expo.out", stagger: 0.06, clearProps: "transform,opacity,translate,rotate,scale", scrollTrigger: { trigger: diagram, start: "top 88%" }, onComplete: () => { archItems.forEach((el) => el.classList.remove("is-animating")); draw(); } });
     }
   }
 
@@ -798,7 +822,6 @@
   /* ---------- Apply language ---------- */
   function applyLanguage(lang, isInitial = false) {
     currentLang = lang;
-    localStorage.setItem("eb_lang", lang);
     const t = i18n[lang];
 
     document.documentElement.lang = t.htmlLang;
