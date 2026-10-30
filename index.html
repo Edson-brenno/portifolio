@@ -70,20 +70,27 @@
         <li><a href="#vida" data-nav>Além do código</a></li>
       </ul>
     </nav>
-    <a href="#contato" class="btn btn--small btn--ghost nav__cta magnetic" id="navCta">Vamos conversar</a>
-    <button class="nav__burger" id="navBurger" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobileMenu">
-      <span></span><span></span>
-    </button>
+    <div class="nav__actions">
+      <button class="lang-switch magnetic" id="langSwitch" type="button" aria-label="Switch to English">
+        <span class="lang-switch__item is-active" data-lang-opt="pt">PT</span>
+        <span class="lang-switch__sep" aria-hidden="true">/</span>
+        <span class="lang-switch__item" data-lang-opt="en">EN</span>
+      </button>
+      <a href="#contato" class="btn btn--small btn--ghost nav__cta magnetic" id="navCta">Vamos conversar</a>
+      <button class="nav__burger" id="navBurger" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span><span></span>
+      </button>
+    </div>
   </header>
 
   <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
     <ul>
-      <li><a href="#trajetoria">Trajetória</a></li>
-      <li><a href="#impacto">Impacto</a></li>
-      <li><a href="#arquitetura">Arquitetura</a></li>
-      <li><a href="#stack">Stack</a></li>
-      <li><a href="#vida">Além do código</a></li>
-      <li><a href="#contato">Contato</a></li>
+      <li><a href="#trajetoria" data-mobile-nav="trajetoria">Trajetória</a></li>
+      <li><a href="#impacto" data-mobile-nav="impacto">Impacto</a></li>
+      <li><a href="#arquitetura" data-mobile-nav="arquitetura">Arquitetura</a></li>
+      <li><a href="#stack" data-mobile-nav="stack">Stack</a></li>
+      <li><a href="#vida" data-mobile-nav="vida">Além do código</a></li>
+      <li><a href="#contato" data-mobile-nav="contato">Contato</a></li>
     </ul>
   </div>
 
