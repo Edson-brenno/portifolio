@@ -14,7 +14,8 @@ js/main.js
 assets/
   img/      fotos otimizadas (WebP)
   video/    vídeos comprimidos (H.264, sem áudio)
-  cv-edson-brenno.pdf
+  curriculo_edson_brenno_portfolio_pt.pdf
+  curriculo_edson_brenno_portfolio_en.pdf
 ```
 
 ## Rodar localmente

@@ -284,6 +284,8 @@
       copyHint: "clique para copiar",
       copySuccess: "copiado! ✓ te espero na caixa de entrada",
       cvLabel: "Currículo",
+      cvFile: "assets/curriculo_edson_brenno_portfolio_pt.pdf",
+      cvFileName: "curriculo_edson_brenno_portfolio_pt.pdf",
       footerText: '© <span id="year">' + new Date().getFullYear() + '</span> Edson Brenno · Feito com café, código e um pouco de violoncelo.',
       backToTop: "Voltar ao topo ↑"
     },
@@ -443,6 +445,8 @@
       copyHint: "click to copy",
       copySuccess: "copied! ✓ see you in my inbox",
       cvLabel: "Resume",
+      cvFile: "assets/curriculo_edson_brenno_portfolio_en.pdf",
+      cvFileName: "curriculo_edson_brenno_portfolio_en.pdf",
       footerText: '© <span id="year">' + new Date().getFullYear() + '</span> Edson Brenno · Built with coffee, code, and a bit of cello.',
       backToTop: "Back to top ↑"
     }
@@ -848,7 +852,11 @@
     const heroCtaStory = $("#heroCtaStory");
     if (heroCtaStory) heroCtaStory.innerHTML = t.heroCtaStory;
     const heroCtaCv = $("#heroCtaCv");
-    if (heroCtaCv) heroCtaCv.innerHTML = t.heroCtaCv;
+    if (heroCtaCv) {
+      heroCtaCv.innerHTML = t.heroCtaCv;
+      heroCtaCv.setAttribute("href", t.cvFile);
+      heroCtaCv.setAttribute("download", t.cvFileName);
+    }
     const heroImg = $(".hero__frame img");
     if (heroImg) heroImg.setAttribute("alt", t.heroImgAlt);
     const chip3 = $(".float-chip--3");
@@ -1039,6 +1047,8 @@
       linkCv.innerHTML = "";
       if (svg) linkCv.appendChild(svg);
       linkCv.append(" " + t.cvLabel);
+      linkCv.setAttribute("href", t.cvFile);
+      linkCv.setAttribute("download", t.cvFileName);
     }
     const footerP = $(".footer p");
     if (footerP) footerP.innerHTML = t.footerText;
